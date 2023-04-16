@@ -31,6 +31,5 @@ var crudApp = new function() {
 		div.innerHTML = '수강관리 앱';
 		div.appendChild(table);
 	}
-	/*여기수정함*/
 }
 crudApp.createTable();
