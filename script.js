@@ -21,10 +21,22 @@ var crudApp = new function() {
 
 		var tr = table.insertRow(-1);
 
+		//th 작성
 		for(var h =0; h<this.col.length; h++){
 			var th = document.createElement('th');
 			th.innerHTML = this.col[h];
 			tr.appendChild(th);
+		}
+
+		//tr 작성
+		for(var i=0; i<this.myClass.length; i++){
+			//table에 일단 한 행을 추가
+			tr=table.insertRow(-1);
+			//table header길이만큼 순회하며 거기에 매칭되는 데이터 가져오기
+			for(var j=0; j<this.col.length; j++){
+				var tabCell=tr.insertCell(-1);
+				tabCell.innerHTML = this.myClass[i][this.col[j]];
+			}
 		}
 
 		var div = document.getElementById('container');
